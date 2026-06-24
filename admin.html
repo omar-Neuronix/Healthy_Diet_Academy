@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="لوحة تحكم المدير - Healthy Diet Academy" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>لوحة تحكم المدير - Healthy Diet Academy</title>
+  <style>
+    :root{--primary:#4A704A;--primary-dark:#121F12;--accent:#D2B474;--muted:#607260;--border:#E5ECE5;--shadow:0 18px 45px rgba(18,31,18,0.08);--radius:18px;}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family: Arial, sans-serif;background:#f7f9f7;color:var(--primary-dark);padding:24px;}
+    .wrap{max-width:980px;margin:0 auto;}
+    header{display:flex;gap:12px;align-items:center;justify-content:space-between;margin-bottom:18px;}
+    h1{font-size:20px;color:var(--primary-dark)}
+    .card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;margin-bottom:18px;}
+    label{display:block;margin:10px 0 6px;color:var(--muted);font-weight:700;}
+    input, textarea, select{width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:10px;outline:none;font-size:14px;}
+    textarea{min-height:110px;resize:vertical;}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+    @media (max-width:780px){.row{grid-template-columns:1fr;}}
+    button{background:var(--primary);color:#fff;border:0;padding:12px 14px;border-radius:12px;cursor:pointer;font-weight:800;margin-top:12px;}
+    button:disabled{opacity:0.6;cursor:not-allowed}
+    .danger{background:#b42318;}
+    .ok{background:var(--primary)}
+    .muted{color:var(--muted);font-size:13px;line-height:1.6;margin-top:8px;}
+    .status{margin-top:12px;padding:12px;border-radius:12px;border:1px solid var(--border);background:#fbfbfb;display:none;white-space:pre-wrap;}
+    .status.show{display:block;}
+    .status.ok{border-color:rgba(74,112,74,0.35);background:#f1fbf5;}
+    .status.err{border-color:rgba(180,35,24,0.35);background:#fff5f5;}
+    .top-actions{display:flex;gap:10px;align-items:center;}
+    .pill{padding:8px 10px;border-radius:999px;border:1px solid var(--border);background:#fff;font-weight:800;font-size:12px;color:var(--muted);}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>لوحة تحكم المدير (إرسال شهادات/بيانات)</h1>
+      <div class="top-actions">
+        <span class="pill" id="envPill">…</span>
+      </div>
+    </header>
+
+    <div class="card">
+      <div class="row">
+        <div>
+          <label>تأكد أنك تملك صلاحية الإدارة</label>
+          <input id="adminToken" type="password" placeholder="Bearer token (ADMIN_KEY)" autocomplete="off" />
+          <div class="muted">سيتم إرسال التوكن فقط إلى السيرفر داخل هيدر Authorization. لا يتم حفظه محليًا.</div>
+        </div>
+        <div>
+          <label>API Base</label>
+          <input id="apiUrl" type="text" readonly />
+          <div class="muted">يتم ضبطه تلقائيًا حسب الدومين.</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <label>رقم/كود الشهادة (id)</label>
+          <input id="certId" type="text" placeholder="مثال: HDA-2026-05" />
+        </div>
+        <div>
+          <label>صورة الشهادة (certificateImage)</label>
+          <input id="certificateImage" type="text" placeholder="مثال: 3.png أو رابط كامل" />
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <label>اسم الخريج</label>
+          <input id="studentName" type="text" placeholder="اسم الطالب" />
+        </div>
+        <div>
+          <label>اسم الدورة/الكورس</label>
+          <input id="courseName" type="text" placeholder="مثال: دبلومة السمنة والنحافة" />
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <label>تاريخ الإصدار (issueDate)</label>
+          <input id="issueDate" type="date" />
+        </div>
+        <div>
+          <label>التقدير العام (grade)</label>
+          <input id="grade" type="text" placeholder="امتياز / جيد جدًا / ..." />
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div>
+          <label>الدرجة / score (من 100)</label>
+          <input id="score" type="number" min="0" max="100" value="0" />
+        </div>
+        <div>
+          <label>الختم (stamp)</label>
+          <input id="stamp" type="text" placeholder="معتمدة رسميًا" />
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <label>المرجع/الجهة المانحة (issuer)</label>
+          <input id="issuer" type="text" placeholder="اسم الجهة" />
+        </div>
+        <div></div>
+      </div>
+
+
+
+
+
+
+
+
+      <div class="row">
+        <div>
+          <label>كود التحقق (verificationCode)</label>
+          <input id="verificationCode" type="text" placeholder="VER-2026-005" />
+        </div>
+        <div>
+          <label>صلاحية الشهادة</label>
+          <select id="isValid">
+            <option value="true" selected>صالحة</option>
+            <option value="false">غير صالحة</option>
+          </select>
+        </div>
+      </div>
+
+      <button class="ok" id="addCertBtn">إرسال/إضافة شهادة</button>
+      <button class="danger" id="clearBtn" type="button">مسح الحقول</button>
+
+      <div class="row" style="margin-top:16px;">
+        <div>
+          <label>رابط الامتحانات (active_exam_link)</label>
+          <input id="activeExamLink" type="text" placeholder="مثال: https://forms.microsoft.com/..." />
+        </div>
+        <div style="display:flex;align-items:flex-end;">
+          <button class="ok" id="updateExamLinkBtn" type="button">تحديث رابط الامتحانات</button>
+        </div>
+      </div>
+
+
+      <pre id="status" class="status"></pre>
+    </div>
+
+    </div>
+
+    <div class="card">
+      <h2 style="font-size:16px;color:var(--primary-dark);margin-bottom:10px;">إدارة الشهادات المسجّلة</h2>
+
+      <div class="row">
+        <div>
+          <label>بحث (id / اسم الخريج / اسم الكورس)</label>
+          <input id="certSearchInput" type="text" placeholder="مثال: HDA-2026-01 أو اسم الطالب" />
+        </div>
+        <div>
+          <label>تحميل/تحديث القائمة</label>
+          <button class="ok" id="reloadCertsBtn" type="button">تحديث</button>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:10px;align-items:center;justify-content:space-between;margin-top:12px;">
+        <div class="muted" id="certsCount">—</div>
+        <div class="muted" style="white-space:nowrap;" id="certsHint">يتم عرض البيانات من certificates.json عبر API محمي بـ ADMIN_KEY</div>
+      </div>
+
+      <div style="margin-top:12px;overflow:auto;border:1px solid var(--border);border-radius:14px;">
+        <table style="width:100%;border-collapse:collapse;min-width:760px;background:#fff;">
+          <thead>
+            <tr style="background:#f7f9f7;">
+              <th style="padding:12px;border-bottom:1px solid var(--border);text-align:right;">id</th>
+              <th style="padding:12px;border-bottom:1px solid var(--border);text-align:right;">اسم الخريج</th>
+              <th style="padding:12px;border-bottom:1px solid var(--border);text-align:right;">الكورس</th>
+              <th style="padding:12px;border-bottom:1px solid var(--border);text-align:right;">تاريخ الإصدار</th>
+              <th style="padding:12px;border-bottom:1px solid var(--border);text-align:right;">صلاحية</th>
+              <th style="padding:12px;border-bottom:1px solid var(--border);text-align:center;">إجراءات</th>
+            </tr>
+          </thead>
+          <tbody id="certsTbody">
+          </tbody>
+        </table>
+      </div>
+
+      <div class="muted" style="margin-top:12px;">
+        ملاحظة: التعديل يعرض/يحفظ كامل بيانات الشهادة من خلال Modal (id ثابت).
+      </div>
+    </div>
+
+    <!-- Debug: console + auto-load -->
+    <script>
+      // ملاحظة: إذا لم تظهر البيانات بعد إدخال التوكن، راقب Console
+      console.log('[Admin] page loaded');
+    </script>
+
+
+    <!-- Modal تعديل شهادة -->
+    <div class="modal-overlay" id="certEditModal" style="position:fixed;inset:0;background:rgba(0,0,0,0.7);display:none;align-items:center;justify-content:center;z-index:999;">
+      <div class="modal-content" style="background:#fff;width:min(92vw,980px);max-height:90vh;overflow:auto;border-radius:12px;padding:16px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+          <h3 style="margin:0;font-size:16px;color:var(--primary-dark);">تعديل شهادة</h3>
+          <button class="danger" type="button" id="certEditCloseBtn" style="border-radius:10px;padding:10px 12px;">إغلاق</button>
+        </div>
+
+        <div class="row">
+          <div>
+            <label>id (غير قابل للتغيير)</label>
+            <input id="editCertId" type="text" readonly />
+          </div>
+          <div>
+            <label>certificateImage</label>
+            <input id="editCertificateImage" type="text" placeholder="3.png أو رابط" />
+          </div>
+        </div>
+
+        <div class="row">
+          <div>
+            <label>اسم الخريج (studentName)</label>
+            <input id="editStudentName" type="text" />
+          </div>
+          <div>
+            <label>اسم الدورة/الكورس (courseName)</label>
+            <input id="editCourseName" type="text" />
+          </div>
+        </div>
+
+        <div class="row">
+          <div>
+            <label>تاريخ الإصدار (issueDate)</label>
+            <input id="editIssueDate" type="date" />
+          </div>
+          <div>
+            <label>تاريخ الانتهاء (expiryDate)</label>
+            <input id="editExpiryDate" type="date" />
+          </div>
+        </div>
+
+        <div class="row">
+          <div>
+            <label>الدرجة / score (0-100)</label>
+            <input id="editScore" type="number" min="0" max="100" />
+          </div>
+          <div>
+            <label>التقدير العام (grade)</label>
+            <input id="editGrade" type="text" />
+          </div>
+        </div>
+
+        <div class="row">
+          <div>
+            <label>الختم (stamp)</label>
+            <input id="editStamp" type="text" />
+          </div>
+          <div>
+            <label>المرجع/الجهة المانحة (issuer)</label>
+            <input id="editIssuer" type="text" />
+          </div>
+        </div>
+
+        <div class="row">
+          <div>
+            <label>كود التحقق (verificationCode)</label>
+            <input id="editVerificationCode" type="text" />
+          </div>
+          <div>
+            <label>صلاحية الشهادة</label>
+            <select id="editIsValid">
+              <option value="true">صالحة</option>
+              <option value="false">غير صالحة</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:10px;justify-content:flex-end;margin-top:14px;">
+          <button class="ok" id="certEditSaveBtn" type="button">حفظ التعديل</button>
+          <button class="danger" id="certDeleteConfirmBtn" type="button">حذف الشهادة</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <script>
+    // API Base ديناميكي لتفادي كسر لوحة التحكم عند تغيير الدومين.
+    // يفترض أن backend يعمل على نفس الـ origin (protocol + host + port) لهذا التطبيق.
+    const API_URL = window.location.origin;
+    document.getElementById('apiUrl').value = API_URL;
+
+    document.getElementById('envPill').textContent = window.location.hostname === 'localhost' ? 'Local' : 'Production';
+
+    const $ = (id) => document.getElementById(id);
+
+    function showStatus(text, ok=true){
+      const el = $('status');
+      el.classList.add('show');
+      el.classList.toggle('ok', ok);
+      el.classList.toggle('err', !ok);
+      el.textContent = text;
+    }
+
+    function clearFields(){
+      ['certId','certificateImage','studentName','courseName','issueDate','score','grade','issuer','stamp','verificationCode'].forEach(id=>{
+        const el = $(id);
+
+        if(!el) return;
+        if(el.type === 'date') el.value='';
+        else if(el.type === 'number') el.value='0';
+        else el.value='';
+      });
+      $('isValid').value = 'true';
+      $('status').classList.remove('show');
+    }
+
+    $('clearBtn').addEventListener('click', clearFields);
+
+    $('updateExamLinkBtn').addEventListener('click', async () => {
+      const token = $('adminToken').value.trim();
+      if (!token) return showStatus('أدخل Bearer token أولًا.', false);
+
+      const activeExamLink = $('activeExamLink').value.trim();
+      if (!activeExamLink) return showStatus('أدخل رابط الامتحانات (active_exam_link).', false);
+
+      try {
+        $('updateExamLinkBtn').disabled = true;
+        showStatus('⏳ جاري تحديث رابط الامتحانات...');
+
+        const resp = await fetch(`${API_URL}/api/admin/exam-link`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': token.startsWith('Bearer ') ? token : `Bearer ${token}`
+          },
+          body: JSON.stringify({ active_exam_link: activeExamLink })
+        });
+
+        const data = await resp.json();
+        if (!data.success) {
+          return showStatus(`❌ فشل التحديث:\n${data.message || 'خطأ غير معروف'}`, false);
+        }
+
+        $('activeExamLink').value = data?.data?.active_exam_link || activeExamLink;
+        showStatus('✅ تم تحديث رابط الامتحانات بنجاح', true);
+      } catch (e) {
+        showStatus(`❌ خطأ: ${e?.message || e}`, false);
+      } finally {
+        $('updateExamLinkBtn').disabled = false;
+      }
+    });
+
+    $('addCertBtn').addEventListener('click', async () => {
+      const token = $('adminToken').value.trim();
+      if(!token) return showStatus('أدخل Bearer token أولًا.', false);
+
+      const certData = {
+        id: $('certId').value.trim(),
+        studentName: $('studentName').value.trim(),
+        courseName: $('courseName').value.trim(),
+        issueDate: $('issueDate').value ? new Date($('issueDate').value).toISOString() : undefined,
+
+        score: Number($('score').value || 0),
+        grade: $('grade').value.trim(),
+        verificationCode: $('verificationCode').value.trim(),
+        issuer: $('issuer').value.trim(),
+        stamp: $('stamp').value.trim(),
+        certificateImage: $('certificateImage').value.trim(),
+        isValid: $('isValid').value === 'true'
+      };
+
+      if(!certData.id || !certData.studentName || !certData.courseName || !certData.issueDate || !certData.verificationCode){
+        return showStatus('يرجى إدخال بيانات أساسية: id, studentName, courseName, issueDate, verificationCode', false);
+      }
+
+      if(!certData.certificateImage){
+        return showStatus('يرجى إدخال certificateImage (اسم صورة داخل المشروع أو رابط)', false);
+      }
+
+      try{
+        $('addCertBtn').disabled = true;
+        showStatus('⏳ جاري الإرسال...');
+        const resp = await fetch(`${API_URL}/api/cert/add`, {
+          method: 'POST',
+          headers: {
+            'Content-Type':'application/json',
+            'Authorization': token.startsWith('Bearer ') ? token : `Bearer ${token}`
+          },
+          body: JSON.stringify({ certData })
+        });
+
+        const data = await resp.json();
+        if(!data.success){
+          return showStatus(`❌ فشل الإرسال:\n${data.message || 'خطأ غير معروف'}`, false);
+        }
+        showStatus(`✅ تم الإضافة بنجاح.\n\n${JSON.stringify(data.data, null, 2)}`, true);
+      }catch(e){
+        showStatus(`❌ خطأ: ${e?.message || e}`, false);
+      }finally{
+        $('addCertBtn').disabled = false;
+      }
+    });
+    // =====================
+    // إدارة الشهادات (Admin) - عرض/تعديل/حذف
+    // =====================
+
+    const certSearchInput = $('certSearchInput');
+    const reloadCertsBtn = $('reloadCertsBtn');
+    const certsTbody = $('certsTbody');
+    const certsCount = $('certsCount');
+
+    const certEditModal = $('certEditModal');
+    const certEditCloseBtn = $('certEditCloseBtn');
+    const certEditSaveBtn = $('certEditSaveBtn');
+    const certDeleteConfirmBtn = $('certDeleteConfirmBtn');
+
+    const editCertId = $('editCertId');
+    const editCertificateImage = $('editCertificateImage');
+    const editStudentName = $('editStudentName');
+    const editCourseName = $('editCourseName');
+    const editIssueDate = $('editIssueDate');
+    const editExpiryDate = $('editExpiryDate');
+    const editScore = $('editScore');
+    const editGrade = $('editGrade');
+    const editStamp = $('editStamp');
+    const editIssuer = $('editIssuer');
+    const editVerificationCode = $('editVerificationCode');
+    const editIsValid = $('editIsValid');
+
+    function toLocalDateInputValue(iso){
+      if(!iso) return '';
+      const d = new Date(iso);
+      if(Number.isNaN(d.getTime())) return '';
+      const yyyy = d.getFullYear();
+      const mm = String(d.getMonth()+1).padStart(2,'0');
+      const dd = String(d.getDate()).padStart(2,'0');
+      return `${yyyy}-${mm}-${dd}`;
+    }
+
+    function getToken(){
+      const tokenRaw = $('adminToken').value.trim();
+      if(!tokenRaw) return '';
+      return tokenRaw.startsWith('Bearer ') ? tokenRaw : `Bearer ${tokenRaw}`;
+    }
+
+    function openEditModal(cert){
+      editCertId.value = cert.id || '';
+      editCertificateImage.value = cert.certificateImage || '';
+      editStudentName.value = cert.studentName || '';
+      editCourseName.value = cert.courseName || '';
+      editIssueDate.value = toLocalDateInputValue(cert.issueDate);
+      editExpiryDate.value = toLocalDateInputValue(cert.expiryDate);
+      editScore.value = cert.score ?? 0;
+      editGrade.value = cert.grade || '';
+      editStamp.value = cert.stamp || '';
+      editIssuer.value = cert.issuer || '';
+      editVerificationCode.value = cert.verificationCode || '';
+      editIsValid.value = String(cert.isValid === false ? 'false' : 'true');
+      certEditModal.style.display = 'flex';
+    }
+
+    function closeEditModal(){
+      certEditModal.style.display = 'none';
+    }
+
+    certEditCloseBtn.addEventListener('click', closeEditModal);
+    certEditModal.addEventListener('click', (e)=>{ if(e.target === certEditModal) closeEditModal(); });
+
+    async function loadCerts(){
+      const token = getToken();
+      if(!token){
+        if(certsTbody) certsTbody.innerHTML = '';
+        if(certsCount) certsCount.textContent = '—';
+        return;
+      }
+
+      const q = (certSearchInput?.value || '').trim().toLowerCase();
+
+      try{
+        if(reloadCertsBtn) reloadCertsBtn.disabled = true;
+        showStatus('⏳ جاري تحميل الشهادات...');
+
+        const resp = await fetch(`${API_URL}/api/admin/certs`, {
+          method: 'GET',
+          headers: { 'Authorization': token }
+        });
+
+        const data = await resp.json();
+        if(!data.success) return showStatus(`❌ فشل التحميل:\n${data.message || 'خطأ غير معروف'}`, false);
+
+        const all = data.data || [];
+        const filtered = !q ? all : all.filter(c => {
+          const hay = `${c.id||''} ${c.studentName||''} ${c.courseName||''}`.toLowerCase();
+          return hay.includes(q);
+        });
+
+        if(certsCount) certsCount.textContent = `عدد الشهادات: ${filtered.length}`;
+
+        if(!certsTbody) return;
+        certsTbody.innerHTML = filtered.map(c=>{
+          const issue = c.issueDate ? toLocalDateInputValue(c.issueDate) : '';
+          const expiry = c.expiryDate ? toLocalDateInputValue(c.expiryDate) : '';
+          const validText = c.isValid === false ? 'غير صالحة' : 'صالحة';
+          return `
+            <tr>
+              <td style="padding:10px;border-bottom:1px solid var(--border);text-align:right;white-space:nowrap;">${c.id}</td>
+              <td style="padding:10px;border-bottom:1px solid var(--border);text-align:right;">${c.studentName||''}</td>
+              <td style="padding:10px;border-bottom:1px solid var(--border);text-align:right;">${c.courseName||''}</td>
+              <td style="padding:10px;border-bottom:1px solid var(--border);text-align:right;white-space:nowrap;">${issue||''}</td>
+              <td style="padding:10px;border-bottom:1px solid var(--border);text-align:right;white-space:nowrap;">${validText}${expiry?` (${expiry})`:''}</td>
+              <td style="padding:10px;border-bottom:1px solid var(--border);text-align:center;white-space:nowrap;">
+                <button class="ok" type="button" style="margin-top:0;padding:10px 12px;" data-action="edit" data-id="${c.id}">تعديل</button>
+                <button class="danger" type="button" style="margin-top:0;padding:10px 12px;margin-right:8px;" data-action="delete" data-id="${c.id}">حذف</button>
+              </td>
+            </tr>
+          `;
+        }).join('');
+      }catch(e){
+        showStatus(`❌ خطأ: ${e?.message || e}`, false);
+      }finally{
+        if(reloadCertsBtn) reloadCertsBtn.disabled = false;
+      }
+    }
+
+    function refreshAfterOps(){
+      loadCerts();
+    }
+
+    certsTbody.addEventListener('click', async (e)=>{
+      const btn = e.target.closest('button[data-action]');
+      if(!btn) return;
+
+      const action = btn.getAttribute('data-action');
+      const id = btn.getAttribute('data-id');
+      if(!id) return;
+
+      if(action === 'edit'){
+        const token = getToken();
+        try{
+          showStatus('⏳ جاري جلب تفاصيل الشهادة...');
+          const resp = await fetch(`${API_URL}/api/admin/cert/${encodeURIComponent(id)}`, {
+            method: 'GET',
+            headers: { 'Authorization': token }
+          });
+          const data = await resp.json();
+          if(!data.success) return showStatus(`❌ فشل الجلب:\n${data.message || 'خطأ غير معروف'}`, false);
+          openEditModal(data.data);
+        }catch(err){
+          showStatus(`❌ خطأ: ${err?.message || err}`, false);
+        }
+      }
+
+      if(action === 'delete'){
+        const token = getToken();
+        const ok = window.confirm(`هل أنت متأكد من حذف الشهادة ${id} ؟`);
+        if(!ok) return;
+
+        try{
+          certDeleteConfirmBtn.disabled = true;
+          showStatus('⏳ جاري حذف الشهادة...');
+          const resp = await fetch(`${API_URL}/api/admin/cert/${encodeURIComponent(id)}`, {
+            method: 'DELETE',
+            headers: { 'Authorization': token }
+          });
+          const data = await resp.json();
+          if(!data.success) return showStatus(`❌ فشل الحذف:\n${data.message || 'خطأ غير معروف'}`, false);
+          showStatus('✅ تم حذف الشهادة بنجاح', true);
+          closeEditModal();
+          refreshAfterOps();
+        }catch(err){
+          showStatus(`❌ خطأ: ${err?.message || err}`, false);
+        }finally{
+          certDeleteConfirmBtn.disabled = false;
+        }
+      }
+    });
+
+    certEditSaveBtn.addEventListener('click', async ()=>{
+      const token = getToken();
+      if(!token) return showStatus('أدخل Bearer token أولًا.', false);
+
+      const certId = editCertId.value.trim();
+      if(!certId) return showStatus('id غير صحيح', false);
+
+      const certData = {
+        studentName: editStudentName.value.trim(),
+        courseName: editCourseName.value.trim(),
+        issueDate: editIssueDate.value ? new Date(editIssueDate.value).toISOString() : undefined,
+        expiryDate: editExpiryDate.value ? new Date(editExpiryDate.value).toISOString() : undefined,
+        score: Number(editScore.value || 0),
+        grade: editGrade.value.trim(),
+        verificationCode: editVerificationCode.value.trim(),
+        issuer: editIssuer.value.trim(),
+        stamp: editStamp.value.trim(),
+        certificateImage: editCertificateImage.value.trim(),
+        isValid: editIsValid.value === 'true'
+      };
+
+      if(!certData.studentName || !certData.courseName || !certData.issueDate || !certData.verificationCode){
+        return showStatus('يرجى إدخال studentName, courseName, issueDate, verificationCode', false);
+      }
+      if(!certData.certificateImage){
+        return showStatus('يرجى إدخال certificateImage', false);
+      }
+
+      try{
+        certEditSaveBtn.disabled = true;
+        showStatus('⏳ جاري حفظ التعديل...');
+
+        const resp = await fetch(`${API_URL}/api/admin/cert/${encodeURIComponent(certId)}`, {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json', 'Authorization': token },
+          body: JSON.stringify({ certData })
+        });
+
+        const data = await resp.json();
+        if(!data.success) return showStatus(`❌ فشل الحفظ:\n${data.message || 'خطأ غير معروف'}`, false);
+
+        showStatus('✅ تم حفظ التعديل بنجاح', true);
+        closeEditModal();
+        refreshAfterOps();
+      }catch(err){
+        showStatus(`❌ خطأ: ${err?.message || err}`, false);
+      }finally{
+        certEditSaveBtn.disabled = false;
+      }
+    });
+
+    if(reloadCertsBtn) reloadCertsBtn.addEventListener('click', loadCerts);
+    if(certSearchInput) certSearchInput.addEventListener('input', ()=>{
+      clearTimeout(window.__certSearchT);
+      window.__certSearchT = setTimeout(()=>loadCerts(), 400);
+    });
+
+    // Auto-load certs when page is opened (so section data appears without manual click)
+    window.addEventListener('load', () => {
+      try {
+        loadCerts();
+      } catch (e) {
+        showStatus(`❌ خطأ التحميل التلقائي: ${e?.message || e}`, false);
+      }
+    });
+
+    // Also auto-load after token is entered/changed
+    const tokenInput = $('adminToken');
+    if (tokenInput) {
+      tokenInput.addEventListener('input', () => {
+        // Debounce a bit to avoid excessive calls
+        clearTimeout(window.__certTokenT);
+        window.__certTokenT = setTimeout(() => loadCerts(), 400);
+      });
+    }
+
+  </script>
+</body>
+</html>
+
+

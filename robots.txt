@@ -1,0 +1,35 @@
+# Robots.txt for Healthy Diet Academy
+# أكاديمية التغذية الصحية
+
+# السماح لجميع محركات البحث بفهرسة الموقع
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/admin/
+Disallow: /.env
+Disallow: /node_modules/
+Disallow: /temp/
+
+# Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Facebook
+User-agent: facebookexternalhit
+Allow: /
+
+# WhatsApp
+User-agent: WhatsApp
+Allow: /
+
+# ملف خريطة الموقع
+Sitemap: https://healthyacademyegypt.com/sitemap.xml
+
+# معايير الزحف
+Request-rate: 1 request per 1 second

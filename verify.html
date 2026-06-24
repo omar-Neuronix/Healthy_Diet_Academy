@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="تحقق بسرعة من شهادة Healthy Diet Academy باستخدام الرمز الفريد. تحقق من صحة بيانات الخريج والشهادة المعتمدة بسهولة.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#4A704A">
+    <link rel="canonical" href="/verify.html">
+    <title>التحقق من الشهادات - Healthy Diet Academy</title>
+    <meta property="og:title" content="التحقق من الشهادات - Healthy Diet Academy">
+    <meta property="og:description" content="تحقق بسرعة من شهادة Healthy Diet Academy باستخدام الرمز الفريد. تحقق من صحة بيانات الخريج والشهادة المعتمدة بسهولة.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ar_AR">
+    <meta property="og:site_name" content="Healthy Diet Academy">
+    <meta property="og:url" content="/verify.html">
+    <meta name="keywords" content="التحقق من الشهادات, شهادة تغذية, مصداقية الشهادة, Healthy Diet Academy">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="التحقق من الشهادات - Healthy Diet Academy">
+    <meta name="twitter:description" content="تحقق بسرعة من شهادة Healthy Diet Academy باستخدام الرمز الفريد. تحقق من صحة بيانات الخريج والشهادة المعتمدة بسهولة.">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "التحقق من الشهادات - Healthy Diet Academy",
+        "url": "/verify.html",
+        "description": "تحقق من شهادة Healthy Diet Academy باستخدام الرمز الفريد لمعرفة حالة الشهادة وصحة بيانات الخريج.",
+        "inLanguage": "ar"
+    }
+    </script>
+    
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url("3.png") center/cover no-repeat fixed;
+            padding: 50px;
+            text-align: center;
+        }
+        .top-header {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            width: fit-content;
+            margin: 0 0 12px 0;
+            padding-left: 18px;
+        }
+        .site-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 68px;
+            height: 68px;
+            border-radius: 50%;
+            background: #ffffff;
+            border: 2px solid #d7f3de;
+            box-shadow: 0 0 0 1px rgba(46, 204, 113, 0.15), 0 4px 14px rgba(0,0,0,0.18);
+            text-decoration: none;
+            overflow: hidden;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+        }
+        .site-link:hover {
+            background: #f4fff7;
+            box-shadow: 0 0 0 2px rgba(46, 204, 113, 0.25), 0 0 18px rgba(46, 204, 113, 0.45);
+            transform: translateY(-1px) scale(1.03);
+        }
+        .site-link img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+            filter: drop-shadow(0 1px 2px rgba(0,0,0,0.1));
+        }
+        .verify-card {
+            background: rgba(255, 255, 255, 0.88);
+            max-width: 450px;
+            margin: 0 auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .logo-box {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 18px;
+        }
+        .logo-box img {
+            width: 180px;
+            height: auto;
+            display: block;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 6px rgba(0,0,0,0.08));
+        }
+        input[type="text"] {
+            width: 80%;
+            padding: 12px;
+            margin: 15px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            text-align: center;
+        }
+        button {
+            background-color: #2ecc71;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 85%;
+        }
+        button:hover {
+            background-color: #27ae60;
+        }
+        .result-box {
+            margin-top: 20px;
+            font-size: 16px;
+            line-height: 1.6;
+            text-align: right;
+            padding: 15px;
+            border-radius: 5px;
+            display: none;
+        }
+        .success {
+            background-color: #e8f8f5;
+            border: 1px solid #2ecc71;
+            color: #27ae60;
+        }
+        .error {
+            background-color: #fdedec;
+            border: 1px solid #e74c3c;
+            color: #c0392b;
+            text-align: center;
+        }
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
+        }
+        .modal-overlay.show {
+            display: flex;
+        }
+        .modal-content {
+            background: white;
+            width: min(90vw, 900px);
+            max-height: 90vh;
+            overflow: auto;
+            border-radius: 12px;
+            padding: 16px;
+            text-align: center;
+            position: relative;
+        }
+        .modal-close {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        .modal-image {
+            width: 100%;
+            max-height: 70vh;
+            object-fit: contain;
+            display: block;
+            margin: 0 auto;
+        }
+        .download-btn {
+            margin-top: 12px;
+            width: auto;
+            padding: 10px 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-header">
+        <a class="site-link" href="index.html" aria-label="العودة للصفحة الرئيسية">
+            <img src="3.png" alt="Healthy Diet Academy">
+        </a>
+    </div>
+
+    <main>
+        <div class="verify-card">
+        <div class="logo-box">
+            <img src="3.png" alt="Healthy Diet Academy">
+        </div>
+        <h2>التحقق من مصداقية الشهادة</h2>
+        <p>أدخل الرمز الفريد المطبوع على الشهادة للتأكد من بيانات الخريج فوراً.</p>
+
+        <input type="text" id="certIdInput" placeholder="مثال: HDA-2026-01">
+        <button id="checkButton" type="button">تحقق الآن</button>
+
+        <div id="resultBox" class="result-box"></div>
+    </div>
+
+    <div class="modal-overlay" id="certificateModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeModal" aria-label="إغلاق">×</button>
+            <img id="certificateImage" class="modal-image" src="" alt="صورة الشهادة">
+            <button class="download-btn" id="downloadCertificateBtn" type="button">تحميل الصورة</button>
+        </div>
+    </div>
+
+    <script>
+        // API Configuration (ديناميكي لتفادي كسر التحقق عند تغيير الدومين)
+const API_URL = window.location.hostname === 'localhost'
+            ? 'http://localhost:3000'
+            : window.location.origin;
+
+        const certIdInput = document.getElementById("certIdInput");
+        const checkButton = document.getElementById("checkButton");
+        const resultBox = document.getElementById("resultBox");
+        const certificateModal = document.getElementById("certificateModal");
+        const certificateImage = document.getElementById("certificateImage");
+        const closeModal = document.getElementById("closeModal");
+        const downloadCertificateBtn = document.getElementById("downloadCertificateBtn");
+
+        function openCertificateModal(imageSrc) {
+            certificateImage.src = imageSrc;
+            certificateModal.classList.add("show");
+        }
+
+        function closeCertificateModal() {
+            certificateModal.classList.remove("show");
+        }
+
+        function downloadImage(url, name) {
+            const link = document.createElement("a");
+            link.href = url;
+            link.download = name;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        async function checkCertificate() {
+            const inputVal = certIdInput.value.trim().toUpperCase();
+
+            resultBox.style.display = "none";
+            resultBox.className = "result-box";
+
+            if (inputVal === "") {
+                resultBox.style.display = "block";
+                resultBox.classList.add("error");
+                resultBox.innerHTML = "يرجى إدخال رمز الشهادة أولاً.";
+                return;
+            }
+
+            try {
+                // إظهار رسالة التحميل
+                resultBox.style.display = "block";
+                resultBox.className = "result-box";
+                resultBox.innerHTML = "⏳ جاري البحث عن الشهادة...";
+
+                // استدعاء API
+                const response = await fetch(`${API_URL}/api/cert/${inputVal}`);
+                const data = await response.json();
+
+                if (data.success && data.data) {
+                    const cert = data.data;
+                    resultBox.className = "result-box success";
+                    resultBox.innerHTML = `
+                        <strong>✅ شهادة معتمدة وصالحة</strong><br><br>
+                        <b>اسم الخريج:</b> ${cert.studentName}<br>
+                        <b>البرنامج التدريبي:</b> ${cert.courseName}<br>
+                        <b>تاريخ الإصدار:</b> ${formatDate(cert.issueDate)}<br>
+                        <b>صلاحيتها حتى:</b> ${formatDate(cert.expiryDate)}<br>
+                        <b>الدرجة:</b> ${cert.score}/100<br>
+                        <b>التقدير العام:</b> ${cert.grade}<br>
+                        <b>الختم:</b> ${cert.stamp}
+                    `;
+                    openCertificateModal(cert.certificateImage);
+                } else {
+                    resultBox.className = "result-box error";
+                    resultBox.innerHTML = `❌ ${data.message || 'الرمز غير صحيح أو الشهادة غير مسجلة في أنظمتنا.'}`;
+                }
+            } catch (error) {
+                console.error('خطأ:', error);
+                resultBox.className = "result-box error";
+                resultBox.innerHTML = `❌ حدث خطأ في الاتصال بالخادم. يرجى المحاولة لاحقاً.`;
+            }
+        }
+
+        function formatDate(dateString) {
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            return new Date(dateString).toLocaleDateString('ar-SA', options);
+        }
+
+        checkButton.addEventListener("click", checkCertificate);
+        certIdInput.addEventListener("keydown", function (event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                checkCertificate();
+            }
+        });
+
+        closeModal.addEventListener("click", closeCertificateModal);
+        certificateModal.addEventListener("click", function (event) {
+            if (event.target === certificateModal) {
+                closeCertificateModal();
+            }
+        });
+        downloadCertificateBtn.addEventListener("click", function () {
+            const currentImage = certificateImage.src;
+            if (currentImage) {
+                downloadImage(currentImage, "certificate.png");
+            }
+        });
+    </script>
+</body>
+</html>
