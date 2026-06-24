@@ -1,2 +1,2 @@
-# Certificate-verification-platform
-Official website for Healthy Diet Academy, featuring the main landing page and an instant student certificate verification system.
+# Healthy Diet Academy
+is an integrated digital platform specializing in certified training diplomas for modern nutritional sciences and health behavior management. The platform features an advanced technical architecture that seamlessly combines instant self-assessment systems with a secure, tamper-proof digital certificate verification ecosystem driven by unique validation codes. Operational workflows are managed through a central, secure dashboard, granting administration absolute flexibility in data governance, curriculum updates, and real-time validation or revocation of credentials to ensure the highest standards of security and institutional efficiency.
