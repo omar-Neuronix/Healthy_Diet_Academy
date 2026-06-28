@@ -1,0 +1,189 @@
+{  
+  "certificates": {
+    "HDA-2026-01": {
+      "id": "HDA-2026-01",
+      "studentName": "سارة أحمد عبد الله",
+      "studentEmail": "sarah.ahmed@example.com",
+      "courseName": "الدبلومة الشاملة في التغذية العلاجية",
+      "courseCode": "HDA-NUTRITION-2026",
+      "issueDate": "2026-05-15",
+      "expiryDate": "2027-05-15",
+      "grade": "امتياز",
+      "score": 98,
+      "certificateImage": "3.png",
+      "certificateFile": "cert_HDA-2026-01.pdf",
+      "verificationCode": "VER-2026-001-SA",
+      "isValid": true,
+      "issuer": "Dr. أحمد محمود",
+      "stamp": "معتمدة رسمياً",
+      "createdAt": "2026-05-15T10:30:00Z"
+    },
+    "HDA-2026-02": {
+      "id": "HDA-2026-02",
+      "studentName": "محمد محمود علي",
+      "studentEmail": "mohammad.ali@example.com",
+      "courseName": "تغذية الرياضيين المحترفين",
+      "courseCode": "HDA-SPORTS-2026",
+      "issueDate": "2026-06-01",
+      "expiryDate": "2027-06-01",
+      "grade": "جيد جداً",
+      "score": 92,
+      "certificateImage": "1.png",
+      "certificateFile": "cert_HDA-2026-02.pdf",
+      "verificationCode": "VER-2026-002-MO",
+      "isValid": true,
+      "issuer": "Dr. فاطمة محمد",
+      "stamp": "معتمدة رسمياً",
+      "createdAt": "2026-06-01T14:20:00Z"
+    },
+    "HDA-2026-03": {
+      "id": "HDA-2026-03",
+      "studentName": "نور علي محمد",
+      "studentEmail": "noor.ali@example.com",
+      "courseName": "دبلومة السمنة والنحافة",
+      "courseCode": "HDA-WEIGHT-2026",
+      "issueDate": "2026-04-10",
+      "expiryDate": "2027-04-10",
+      "grade": "جيد",
+      "score": 85,
+      "certificateImage": "السمنه والنحافه 2.jpeg",
+      "certificateFile": "cert_HDA-2026-03.pdf",
+      "verificationCode": "VER-2026-003-NO",
+      "isValid": true,
+      "issuer": "Dr. محمود أحمد",
+      "stamp": "معتمدة رسمياً",
+      "createdAt": "2026-04-10T09:15:00Z"
+    },
+    "HDA-2026-04": {
+      "id": "HDA-2026-04",
+      "studentName": "ليلى محمد خالد",
+      "studentEmail": "layla.khalid@example.com",
+      "courseName": "دبلومة تغذية الحوامل",
+      "courseCode": "HDA-PREGNANT-2026",
+      "issueDate": "2026-03-20",
+      "expiryDate": "2027-03-20",
+      "grade": "امتياز",
+      "score": 96,
+      "certificateImage": "حوامل 2.jpeg",
+      "certificateFile": "cert_HDA-2026-04.pdf",
+      "verificationCode": "331978Oo*#HDA",
+      "isValid": true,
+      "issuer": "Dr. سماح إبراهيم",
+      "stamp": "معتمدة رسمياً",
+      "createdAt": "2026-03-20T11:45:00Z"
+    }
+  },
+  "courses": {
+    "HDA-NUTRITION-2026": {
+      "code": "HDA-NUTRITION-2026",
+      "name": "الدبلومة الشاملة في التغذية العلاجية",
+      "description": "برنامج شامل متقدم يغطي أساسيات التغذية، التغذية العلاجية، وإدارة الأمراض المزمنة",
+      "duration": "6 أسابيع",
+      "level": "متقدم",
+      "participants": 45,
+      "startDate": "2026-04-01",
+      "endDate": "2026-05-15"
+    },
+    "HDA-SPORTS-2026": {
+      "code": "HDA-SPORTS-2026",
+      "name": "تغذية الرياضيين المحترفين",
+      "description": "دورة متخصصة لتغذية الرياضيين والأداء الرياضي الأمثل",
+      "duration": "4 أسابيع",
+      "level": "متخصص",
+      "participants": 28,
+      "startDate": "2026-05-01",
+      "endDate": "2026-06-01"
+    },
+    "HDA-WEIGHT-2026": {
+      "code": "HDA-WEIGHT-2026",
+      "name": "دبلومة السمنة والنحافة",
+      "description": "برنامج شامل لفهم أسباب التغيرات في الوزن وإدارة الوزن الصحيح",
+      "duration": "8 أسابيع",
+      "level": "أساسي",
+      "participants": 62,
+      "startDate": "2026-02-01",
+      "endDate": "2026-04-10"
+    },
+    "HDA-PREGNANT-2026": {
+      "code": "HDA-PREGNANT-2026",
+      "name": "دبلومة تغذية الحوامل",
+      "description": "دورة متخصصة تغطي احتياجات الحامل الغذائية والصحية",
+      "duration": "5 أسابيع",
+      "level": "متخصص",
+      "participants": 38,
+      "startDate": "2026-02-15",
+      "endDate": "2026-03-20"
+    },
+    "HDA-ADV-NUTR-2026": {
+      "code": "HDA-ADV-NUTR-2026",
+      "name": "أساسيات التغذية والمغذيات الكبرى (Advanced Nutrition Fundamentals)",
+      "description": "مقدمة شاملة في علم التغذية، المفاهيم الأساسية، خريطة العناصر الغذائية في الجسم، الكربوهيدرات والبروتينات والدهون، وحساب السعرات وتوزيع نسب المغذيات الكبرى وفق هدف الحالة.",
+      "duration": "5 أسابيع",
+      "level": "متقدم",
+      "participants": 30,
+      "startDate": "2026-06-15",
+      "endDate": "2026-07-30"
+    },
+    "HDA-MODERN-CLINIC-2026": {
+      "code": "HDA-MODERN-CLINIC-2026",
+      "name": "التغذية الحديثة وتقنيات العيادات (Modern Clinic Nutrition)",
+      "description": "كورس حديث يركز على الفيتامينات والأملاح والمعادن، وتطبيقات الأجهزة الحديثة في العيادات (مثل الميزوثيرابي) لعلاج السمنة الموضعية والنحافة.",
+      "duration": "3 محاضرات",
+      "level": "متخصص",
+
+      "level": "متخصص",
+      "participants": 28,
+      "startDate": "2026-08-01",
+      "endDate": "2026-08-20"
+    },
+    "HDA-ASMT-WEIGHT-SPORTS-2026": {
+      "code": "HDA-ASMT-WEIGHT-SPORTS-2026",
+      "name": "التقييم التغذوي وإدارة الوزن والرياضيين (Assessment, Weight & Sports)",
+      "description": "عملي لتقييم الحالة التغذوية (Nutritional Assessment) والتحاليل والقياسات الأنثروبومترية، ثم إدارة علاجية شاملة لمرضى السمنة والنحافة وتخطيط الأنظمة الغذائية مع استراتيجيات تغذية الرياضيين.",
+      "duration": "3 محاضرات",
+      "level": "متخصص",
+      "participants": 25,
+      "startDate": "2026-08-21",
+      "endDate": "2026-09-10"
+    },
+    "HDA-SPECIAL-PRE-SLP-2026": {
+      "code": "HDA-SPECIAL-PRE-SLP-2026",
+      "name": "التغذية العلاجية للفئات الخاصة (Special Populations Nutrition)",
+      "description": "هيكلة وتفصيل التغذية للأطفال والمشاكل الشائعة، تغذية الحوامل والرعاية الغذائية للأم والجنين، تغذية المرضعات واحتياجات دعم الرضاعة الطبيعية وصحة الأم.",
+      "duration": "3 محاضرات",
+      "level": "متخصص",
+      "participants": 27,
+      "startDate": "2026-09-11",
+      "endDate": "2026-10-01"
+    },
+    "HDA-CHRONIC-CRITICAL-2026": {
+      "code": "HDA-CHRONIC-CRITICAL-2026",
+      "name": "التغذية العلاجية للأمراض المزمنة والرعاية الحرجة (Chronic & Critical Nutrition)",
+      "description": "تغذية مرضى السكر وإدارة المرضى، تغذية مرضى ضغط الدم وأمراض القلب والأوعية، مع التركيز على التغذية الوريدية والأنبوبية (Parenteral & Enteral Nutrition) ورعاية الحالات الحرجة.",
+      "duration": "3 محاضرات",
+      "level": "متخصص",
+      "participants": 26,
+      "startDate": "2026-10-02",
+      "endDate": "2026-10-22"
+    },
+    "HDA-HASP-ISO-SEC-2026": {
+      "code": "HDA-HASP-ISO-SEC-2026",
+      "name": "برنامج سلامة الغذاء والميكروبيولوجيا + أزمة المضادات الحيوية (HACCP & ISO)",
+      "description": "برنامج تدريبي مكثف يجمع بين سلامة الغذاء والميكروبيولوجيا التطبيقية ودراسة أزمة المضادات الحيوية والمقاومة البكتيرية. يهدف لتأهيل المتدربين لفهم المخاطر والسيطرة على نمو البكتيريا ميكروبولوجيًا لضمان منتج آمن وصحي، ويشمل الاعتمادات والشهادات: شهادة في الهاسب + شهادة في الأيزو.",
+      "duration": "6 أسابيع",
+      "level": "متقدم",
+      "participants": 24,
+      "startDate": "2026-11-01",
+      "endDate": "2026-12-15"
+    }
+  },
+  "stats": {
+    "totalStudents": 300,
+    "totalCourses": 4,
+    "totalCertificates": 173,
+    "averageRating": 4.9,
+    "customerSatisfaction": 95,
+    "totalInstructors": 5,
+    "yearEstablished": 2024
+  }
+}
