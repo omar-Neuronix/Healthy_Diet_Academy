@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ل<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="utf-8">
@@ -253,6 +253,85 @@
             html { scroll-behavior: auto; }
             *, *::before, *::after { animation: none !important; transition: none !important; }
         }
+
+        /* تنسيق قسم التذييل والأزرار الاجتماعية */
+.site-footer {
+    background-color: var(--primary-dark, #1e3a8a);
+    color: #ffffff;
+    padding: 25px 0;
+    margin-top: 50px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    text-align: center;
+}
+
+.footer-content p {
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.social-links {
+    display: flex;
+    gap: 12px;
+}
+
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-icon svg {
+    width: 22px;
+    height: 22px;
+    fill: currentColor;
+}
+
+/* تأثيرات الانتقال والألوان الرسمية لكل منصة عند مرور الماوس */
+.social-icon:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    color: #ffffff;
+}
+
+.social-icon.fb:hover {
+    background-color: #1877f2; /* لون فيسبوك */
+}
+
+.social-icon.ig:hover {
+    background-color: #e1306c; /* لون إنستغرام */
+}
+
+.social-icon.wa:hover {
+    background-color: #25d366; /* لون واتساب */
+}
+
+.social-icon.tg:hover {
+    background-color: #24a1de; /* لون تليجرام */
+}
+
+/* شاشات الحواسب الكبيرة لتوزيع العناصر بشكل عرضي ومتناسق */
+@media (min-width: 768px) {
+    .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
     </style>
 </head>
 <body>
@@ -272,7 +351,7 @@
                     <li><a href="verify.html">التحقق من الشهادات</a></li>
                 </ul>
             </nav>
-            <a class="btn btn-primary" href="https://wa.me/201035391849" target="_blank" rel="noopener noreferrer">ابدأ الآن</a>
+            <a class="btn btn-primary" href="https://wa.me/201003618383" target="_blank" rel="noopener noreferrer">ابدأ الآن</a>
         </div>
     </header>
 
@@ -280,10 +359,11 @@
         <section class="hero" id="home">
             <div class="container hero-content">
                 <div class="hero-badge">العلم يلتقي بالصحة الطبيعية</div>
-                <h1>اصنع نمط حياتك الصحي مع <span>Healthy Diet Academy</span></h1>
+                <h1>اصنع نمط حياتك الصحي مع 
+                    <span>Healthy Diet Academy</span></h1>
                 <p>نساعدك على اكتساب عادات صحية مستدامة من خلال دروس عملية، وخطط تغذية مخصصة، ومتابعة مدعومة بخبرة علمية.</p>
                 <div class="hero-actions">
-                    <a class="btn btn-primary" href="https://wa.me/201035391849" target="_blank" rel="noopener noreferrer">ابدأ رحلتك اليوم</a>
+                    <a class="btn btn-primary" href="https://wa.me/201003618383" target="_blank" rel="noopener noreferrer">ابدأ رحلتك اليوم</a>
                     <a class="btn btn-secondary" href="#services">استكشف برامجنا</a>
                 </div>
                 <div class="hero-stats">
@@ -344,67 +424,250 @@
             </div>
         </section>
 
-        <section class="section" id="courses">
-            <div class="container">
-                <div class="section-head">
-                    <h2>الدبلومات</h2>
-                    <p>اختر المسار الذي يناسبك وابدأ رحلتك التعليمية بشكل واضح ومُنظم.</p>
+       <section class="section" id="courses">
+    <div class="container">
+        <div class="section-head">
+            <h2>الدبلومات</h2>
+            <p>اختر المسار الذي يناسبك وابدأ رحلتك التعليمية بشكل واضح ومُنظم.</p>
+        </div>
+
+        <div class="course-grid">
+            <!-- دبلومة التغذية الشاملة فقط -->
+            <article class="course-card">
+                <img class="course-image" src="3.png" alt="دبلومة التغذية الشاملة" loading="lazy" decoding="async">
+                <div class="course-card-header">
+                    <span class="course-number">1</span>
+                    <h3>دبلومة التغذية الشاملة (Comprehensive Nutrition Diploma)</h3>
+                    <small>مسار متكامل لأجل فهم التغذية العلاجية وإدارة الوزن</small>
                 </div>
+                <div class="course-body">
+                    <ul>
+                        <li>دراسة شاملة لأساسيات التغذية وعلم المغذيات.</li>
+                        <li>تقييم الحالة وتصميم الأنظمة الغذائية خطوة بخطوة.</li>
+                        <li>التغذية العلاجية لفئات خاصة وحالات مزمنة ورعاية حرجة.</li>
+                    </ul>
 
-                <div class="course-grid">
-                    <article class="course-card">
-                        <img class="course-image" src="السمنه والنحافه 2.jpeg" alt="دبلومة السمنة والنحافة" loading="lazy" decoding="async">
-                        <div class="course-card-header">
-                            <span class="course-number">1</span>
-                            <h3>دبلومة السمنة والنحافة</h3>
-                            <small>برنامج شامل لفهم أسباب التغيرات في الوزن</small>
-                        </div>
-                        <div class="course-body">
-                            <ul>
-                                <li>فهم أسباب السمنة والنحافة</li>
-                                <li>خطط غذائية مبنية على الاحتياج الشخصي</li>
-                                <li>متابعة عملية وتطبيق يومي</li>
-                            </ul>
+                    <div class="course-subtitle" style="margin-top:18px; font-weight:800; color: var(--primary-dark);">كورسات ضمن الدبلومة</div>
+                    <ul style="margin-top:10px;">
+                        <li><strong>الكورس الأول:</strong> أساسيات التغذية والمغذيات الكبرى (المحاضرات 1 إلى 5)</li>
+                        <li><strong>الكورس الثاني:</strong> التغذية الحديثة وتقنيات العيادات (مع جزء عملي)</li>
+                        <li><strong>الكورس الثالث:</strong> التقييم التغذوي وإدارة الوزن والرياضيين (عملي وتخطيط الأنظمة)</li>
+                        <li><strong>الكورس الرابع:</strong> التغذية العلاجية للفئات الخاصة (أطفال + حوامل + مرضعات)</li>
+                        <li><strong>الكورس الخامس:</strong> التغذية العلاجية للأمراض المزمنة والرعاية الحرجة (سكر + ضغط + رعاية حالات حرجة)</li>
+                    </ul>
 
-                            <div class="course-subtitle" style="margin-top:18px; font-weight:800; color: var(--primary-dark);">كورسات ضمن الدبلومة</div>
-                            <ul style="margin-top:10px;">
-                                <li>كورسات أساسيات التغذية المتقدمة</li>
-                                <li>بناء نظام غذائي حسب الحالة والهدف</li>
-                                <li>المتابعة والتقييم خطوة بخطوة</li>
-                            </ul>
+                    <div class="course-subtitle" style="margin-top:18px; font-weight:800; color: var(--primary-dark);">الشهادات الممنوحة</div>
+                    <ul style="margin-top:10px;">
+                        <li>شهادة دبلومة التغذية العلاجية الشاملة المعتمدة من الأكاديمية</li>
+                        <li>توثيق رقمي كامل للشهادة عبر منصة التحقق الرسمية</li>
+                    </ul>
 
-                            <a class="btn btn-primary" style="width: 100%; margin-top: 20px; font-size: 0.95rem; padding: 12px;" href="https://wa.me/201035391849?text=مرحباً%20أكاديمية%20Healthy%20Diet،%20أود%20الاستفسار%20وحجز%20مقعد%20في%20دبلومة%20السمنة%20والنحافة" target="_blank" rel="noopener noreferrer">احجز مكانك الآن</a>
-                        </div>
-                    </article>
-
-                    <article class="course-card">
-                        <img class="course-image" src="حوامل 2.jpeg" alt="دبلومة تغذية الحوامل" loading="lazy" decoding="async">
-                        <div class="course-card-header">
-                            <span class="course-number">2</span>
-                            <h3>دبلومة تغذية الحوامل</h3>
-                            <small>لأهمية التغذية الصحيحة أثناء الحمل</small>
-                        </div>
-                        <div class="course-body">
-                            <ul>
-                                <li>احتياجات الحامل الغذائية</li>
-                                <li>أخطاء شائعة في النظام الغذائي</li>
-                                <li>إرشادات عملية خلال مراحل الحمل</li>
-                            </ul>
-
-                            <div class="course-subtitle" style="margin-top:18px; font-weight:800; color: var(--primary-dark);">كورسات ضمن الدبلومة</div>
-                            <ul style="margin-top:10px;">
-                                <li>كورسات تغذية الحامل حسب المرحلة</li>
-                                <li>إدارة الاحتياجات الغذائية والفيتامينات</li>
-                                <li>خطط عملية ومتابعة أسبوعية</li>
-                            </ul>
-
-                            <a class="btn btn-primary" style="width: 100%; margin-top: 20px; font-size: 0.95rem; padding: 12px;" href="https://wa.me/201035391849?text=مرحباً%20أكاديمية%20Healthy%20Diet،%20أود%20الاستفسار%20وحجز%20مقعد%20في%20دبلومة%20تغذية%20الحوامل" target="_blank" rel="noopener noreferrer">احجز مكانك الآن</a>
-                        </div>
-                    </article>
+                    <a class="btn btn-primary" style="width: 100%; margin-top: 20px; font-size: 0.95rem; padding: 12px;" href="https://wa.me/201003618383?text=مرحباً%20أكاديمية%20Healthy%20Diet،%20أود%20الاستفسار%20وحجز%20مقعد%20في%20دبلومة%20التغذية%20الشاملة" target="_blank" rel="noopener noreferrer">احجز مكانك الآن</a>
                 </div>
+            </article>
+        </div>
+    </div>
+</section>
+  
+         <section class="section" id="courses">
+    <div class="container">
+        <div class="section-head">
+            <h2>الكورسات</h2>
+            <p>اختر المسار الذي يناسبك وابدأ رحلتك التعليمية بشكل واضح ومُنظم.</p>
+        </div>
 
-            </div>
-        </section>
+        <div class="course-grid">
+            <!-- الكورس الأول -->
+            <article class="course-card">
+                <img class="course-image" src="3.png" alt="أساسيات التغذية والمغذيات الكبرى (Advanced Nutrition Fundamentals)" loading="lazy" decoding="async">
+                <div class="course-card-header">
+                    <span class="course-number">1</span>
+                    <h3>أساسيات التغذية والمغذيات الكبرى (Advanced Nutrition Fundamentals)</h3>
+                    <small>بداية مسارك لفهم التغذية العلاجية</small>
+                </div>
+                <div class="course-body">
+                    <div class="course-subtitle" style="margin-top:0; font-weight:800; color: var(--primary-dark);">الهدف من الكورس</div>
+                    <ul>
+                        <li>بناء القاعدة العلمية المتينة لكل طالب، وفهم كيفية عمل المغذيات داخل الجسم وحساب الطاقة بشكل احترافي.</li>
+                    </ul>
+
+                    <div class="course-subtitle" style="margin-top:18px; font-weight:800; color: var(--primary-dark);">محتوى الكورس</div>
+                    <ul style="margin-top:10px;">
+                        <li>المحاضرة الأولى: مقدمة شاملة في علم التغذية، والمفاهيم الأساسية، والتعرف على خريطة العناصر الغذائية في الجسم.</li>
+                        <li>المحاضرة الثانية: الكربوهيدرات (Carbohydrates) وطرق تصنيفها، ودورها الرئيسي كمصدر للطاقة.</li>
+                        <li>المحاضرة الثالثة: البروتينات (Proteins) والأحماض الأمينية، ودورها في بناء الكتلة العضلية وتجديد الخلايا.</li>
+                        <li>المحاضرة الرابعة: الدهون (Fats) وأنواعها (المشبعة وغير المشبعة)، وتصحيح المفاهيم المغلوطة حولها ودورها الهرموني.</li>
+                        <li>المحاضرة الخامسة: حساب السعرات الحرارية وتوزيع النِسَب بين المغذيات الكبرى بناءً على هدف الحالة.</li>
+                    </ul>
+
+                    <div class="course-subtitle" style="margin-top:18px; font-weight:800; color: var(--primary-dark);">الشهادات الممنوحة</div>
+                    <ul style="margin-top:10px;">
+                        <li>شهادة الأكاديمية الرسمية المعتمدة</li>
+                        <li>تأهيل للحصول على اعتمادات دولية إضافية</li>
+                    </ul>
+
+                    <a class="btn btn-primary" style="width: 100%; margin-top: 20px; font-size: 0.95rem; padding: 12px;" href="https://wa.me/201003618383?text=مرحباً%20أكاديمية%20Healthy%20Diet،%20أود%20الاستفسار%20وحجز%20مقعد%20في%20كورس%20أساسيات%20التغذية%20والمغذيات%20الكبرى" target="_blank" rel="noopener noreferrer">احجز مكانك الآن</a>
+                </div>
+            </article>
+
+            <!-- الكورس الثاني -->
+            <article class="course-card">
+                <img class="course-image" src="3.png" alt="التغذية الحديثة وتقنيات العيادات (Modern Nutrition & Clinic Technologies)" loading="lazy" decoding="async">
+                <div class="course-card-header">
+                    <span class="course-number">2</span>
+                    <h3>التغذية الحديثة وتقنيات العيادات (Modern Nutrition & Clinic Technologies)</h3>
+                    <small>ربط العناصر الغذائية الدقيقة بالتطبيقات التكنولوجية الحديثة</small>
+                </div>
+                <div class="course-body">
+                    <div class="course-subtitle" style="margin-top:0; font-weight:800; color: var(--primary-dark);">الهدف من الكورس</div>
+                    <ul>
+                        <li>دمج المعرفة بالعناصر الغذائية الصغرى مع التطبيق العملي واستخدام الأجهزة المتقدمة لعلاج السمنة والنحافة.</li>
+                    </ul>
+
+                    <div class="course-subtitle" style="margin-top:18px; font-weight:800; color: var(--primary-dark);">محتوى الكورس</div>
+                    <ul style="margin-top:10px;">
+                        <li>المحاضرة الأولى: الفيتامينات (Vitamins) وأنواعها وتأثير نقصها على العمليات الحيوية.</li>
+                        <li>المحاضرة الثانية: الأملاح والمعادن (Minerals) وأهميتها للوظائف الفسيولوجية.</li>
+                        <li>المحاضرة الثالثة (عملي): تطبيقات واستخدام الأجهزة الحديثة في العيادات (مثل: الميزوثيرابي - Mesotherapy) لعلاج السمنة الموضعية والنحافة.</li>
+                    </ul>
+
+                    <div class="course-subtitle" style="margin-top:18px; font-weight:800; color: var(--primary-dark);">الشهادات الممنوحة</div>
+                    <ul style="margin-top:10px;">
+                        <li>شهادة الأكاديمية الرسمية المعتمدة</li>
+                        <li>تأهيل للحصول على اعتمادات دولية إضافية</li>
+                    </ul>
+
+                    <a class="btn btn-primary" style="width: 100%; margin-top: 20px; font-size: 0.95rem; padding: 12px;" href="https://wa.me/201003618383?text=مرحباً%20أكاديمية%20Healthy%20Diet،%20أود%20الاستفسار%20وحجز%20مقعد%20في%20كورس%20التغذية%20الحديثة%20وتقنيات%20العيادات%20" target="_blank" rel="noopener noreferrer">احجز مكانك الآن</a>
+                </div>
+            </article>
+
+            <!-- الكورس الثالث -->
+            <article class="course-card">
+                <img class="course-image" src="3.png" alt="التقييم التغذوي وإدارة الوزن والرياضيين" loading="lazy" decoding="async">
+                <div class="course-card-header">
+                    <span class="course-number">3</span>
+                    <h3>التقييم التغذوي وإدارة الوزن والرياضيين (Nutritional Assessment & Sports Nutrition)</h3>
+                    <small>الجانب التطبيقي الاحترافي لإدارة الوزن وتغذية الأداء البدني</small>
+                </div>
+                <div class="course-body">
+                    <div class="course-subtitle" style="margin-top:0; font-weight:800; color: var(--primary-dark);">الهدف من الكورس</div>
+                    <ul>
+                        <li>تمكين الطالب عملياً من تقييم الحالات وتصميم الأنظمة الغذائية المتكاملة وإدارة السمنة وتغذية الرياضيين.</li>
+                    </ul>
+
+                    <div class="course-subtitle" style="margin-top:18px; font-weight:800; color: var(--primary-dark);">محتوى الكورس</div>
+                    <ul style="margin-top:10px;">
+                        <li>المحاضرة الأولى (عملي): طرق تقييم الحالة التغذوية للمريض (Nutritional Assessment) والتحاليل والقياسات الأنثروبومترية.</li>
+                        <li>المحاضرة الثانية (عملي): الإدارة العلاجية الشاملة لمرضى السمنة والنحافة وكيفية تصميم وتركيب الأنظمة الغذائية (Diet Planning).</li>
+                        <li>المحاضرة الثالثة: أساسيات واستراتيجيات تغذية الرياضيين الاحترافية والأداء البدني.</li>
+                    </ul>
+
+                    <div class="course-subtitle" style="margin-top:18px; font-weight:800; color: var(--primary-dark);">الشهادات الممنوحة</div>
+                    <ul style="margin-top:10px;">
+                        <li>شهادة الأكاديمية الرسمية المعتمدة</li>
+                        <li>تأهيل للحصول على اعتمادات دولية إضافية</li>
+                    </ul>
+
+                    <a class="btn btn-primary" style="width: 100%; margin-top: 20px; font-size: 0.95rem; padding: 12px;" href="https://wa.me/201003618383?text=مرحباً%20أكاديمية%20Healthy%20Diet،%20أود%20الاستفسار%20وحجز%20مقعد%20في%20كورس%20التقييم%20التغذوي%20وإدارة%20الوزن%20والرياضيين" target="_blank" rel="noopener noreferrer">احجز مكانك الآن</a>
+                </div>
+            </article>
+
+            <!-- الكورس الرابع -->
+            <article class="course-card">
+                <img class="course-image" src="3.png" alt="التغذية العلاجية للفئات الخاصة" loading="lazy" decoding="async">
+                <div class="course-card-header">
+                    <span class="course-number">4</span>
+                    <h3>التغذية العلاجية للفئات الخاصة (Pediatric & Maternal Nutrition)</h3>
+                    <small>الرعاية التغذوية المتخصصة للأطفال والأمهات</small>
+                </div>
+                <div class="course-body">
+                    <div class="course-subtitle" style="margin-top:0; font-weight:800; color: var(--primary-dark);">الهدف من الكورس</div>
+                    <ul>
+                        <li>فهم الرعاية التغذوية الدقيقة للفئات الحساسة لضمان النمو السليم والدعم الصحي المتكامل للأم والجنين والطفل.</li>
+                    </ul>
+
+                    <div class="course-subtitle" style="margin-top:18px; font-weight:800; color: var(--primary-dark);">محتوى الكورس</div>
+                    <ul style="margin-top:10px;">
+                        <li>المحاضرة الأولى: تغذية الأطفال (Pediatric Nutrition) والنمو السليم والمشاكل الشائعة.</li>
+                        <li>المحاضرة الثانية: تغذية الحوامل (Maternal Nutrition) والرعاية الغذائية للأم والجنين خلال مراحل الحمل.</li>
+                        <li>المحاضرة الثالثة: تغذية المرضعات (Lactation Nutrition) والاحتياجات الغذائية لدعم الرضاعة الطبيعية وصحة الأم.</li>
+                    </ul>
+
+                    <div class="course-subtitle" style="margin-top:18px; font-weight:800; color: var(--primary-dark);">الشهادات الممنوحة</div>
+                    <ul style="margin-top:10px;">
+                        <li>شهادة الأكاديمية الرسمية المعتمدة</li>
+                        <li>تأهيل للحصول على اعتمادات دولية إضافية</li>
+                    </ul>
+
+                    <a class="btn btn-primary" style="width: 100%; margin-top: 20px; font-size: 0.95rem; padding: 12px;" href="https://wa.me/201003618383?text=مرحباً%20أكاديمية%20Healthy%20Diet،%20أود%20الاستفسار%20وحجز%20مقعد%20في%20كورس%20التغذية%20العلاجية%20للفئات%20الخاص" target="_blank" rel="noopener noreferrer">احجز مكانك الآن</a>
+                </div>
+            </article>
+
+            <!-- الكورس الخامس -->
+            <article class="course-card">
+                <img class="course-image" src="3.png" alt="التغذية العلاجية للأمراض المزمنة والرعاية الحرجة" loading="lazy" decoding="async">
+                <div class="course-card-header">
+                    <span class="course-number">5</span>
+                    <h3>التغذية العلاجية للأمراض المزمنة والرعاية الحرجة (Clinical & Critical Care Nutrition)</h3>
+                    <small>إدارة التغذية السريرية المتقدمة لمرضى العناية والأمراض المزمنة</small>
+                </div>
+                <div class="course-body">
+                    <div class="course-subtitle" style="margin-top:0; font-weight:800; color: var(--primary-dark);">الهدف من الكورس</div>
+                    <ul>
+                        <li>التأهيل الاحترافي المتقدم لتصميم خطط التغذية الوريدية والأنبوبية والتعامل مع حالات السكر والضغط الحرجة.</li>
+                    </ul>
+
+                    <div class="course-subtitle" style="margin-top:18px; font-weight:800; color: var(--primary-dark);">محتوى الكورس</div>
+                    <ul style="margin-top:10px;">
+                        <li>المحاضرة الأولى: التغذية العلاجية المتقدمة لمرضى السكر (Diabetes Management).</li>
+                        <li>المحاضرة الثانية: التغذية العلاجية لمرضى ضغط الدم (Hypertension) وأمراض القلب والأوعية الدموية.</li>
+                        <li>المحاضرة الثالثة: التغذية الوريدية والأنبوبية (Parenteral & Enteral Nutrition) ورعاية الحالات الحرجة.</li>
+                    </ul>
+
+                    <div class="course-subtitle" style="margin-top:18px; font-weight:800; color: var(--primary-dark);">الشهادات الممنوحة</div>
+                    <ul style="margin-top:10px;">
+                        <li>شهادة الأكاديمية الرسمية المعتمدة</li>
+                        <li>تأهيل للحصول على اعتمادات دولية إضافية</li>
+                    </ul>
+
+                    <a class="btn btn-primary" style="width: 100%; margin-top: 20px; font-size: 0.95rem; padding: 12px;" href="https://wa.me/201003618383?text=مرحباً%20أكاديمية%20Healthy%20Diet،%20أود%20الاستفسار%20وحجز%20مقعد%20في%20كورس%20التغذية%20العلاجية%20للأمراض%20المزمنة%20والرعاية%20الحرجة%20" target="_blank" rel="noopener noreferrer">احجز مكانك الآن</a>
+                </div>
+            </article>
+
+            <!-- الكورس السادس -->
+            <article class="course-card">
+                <img class="course-image" src="3.png" alt="كورس الجودة وسلامة الغذاء" loading="lazy" decoding="async">
+                <div class="course-card-header">
+                    <span class="course-number">6</span>
+                    <h3>كورس الجودة وسلامة الغذاء (الميكروبيولوجيا التطبيقية والهاسب)</h3>
+                    <small>مخصص وموجه خصيصاً لطلاب وخريجي كليات الزراعة والعلوم</small>
+                </div>
+                <div class="course-body">
+                    <div class="course-subtitle" style="margin-top:0; font-weight:800; color: var(--primary-dark);">الهدف من الكورس</div>
+                    <ul>
+                        <li>تأهيل المتدربين لفهم ومكافحة المخاطر التي تهدد جودة الغذاء في خطوط التصنيع والتحكم بالميكروبيولوجيا التطبيقية.</li>
+                    </ul>
+
+                    <div class="course-subtitle" style="margin-top:18px; font-weight:800; color: var(--primary-dark);">محتوى الكورس</div>
+                    <ul style="margin-top:10px;">
+                        <li>برنامج تدريبي تخصصي مكثف يجمع بين سلامة الغذاء والميكروبيولوجيا التطبيقية في خطوط التصنيع والتداول.</li>
+                        <li>دراسة أزمة المضادات الحيوية والمقاومة البكتيرية وكيفية السيطرة على نموها ميكروبولوجياً.</li>
+                        <li>تأمين جودة التداول والتصنيع لضمان تقديم منتج صحي وآمن ومطابق للمواصفات القياسية.</li>
+                    </ul>
+
+                    <div class="course-subtitle" style="margin-top:18px; font-weight:800; color: var(--primary-dark);">الشهادات الممنوحة</div>
+                    <ul style="margin-top:10px;">
+                        <li>شهادة نظام الهاسب (HACCP) المعتمدة دولياً</li>
+                        <li>شهادة نظام الأيزو (ISO) المعتمدة دولياً</li>
+                    </ul>
+
+                    <a class="btn btn-primary" style="width: 100%; margin-top: 20px; font-size: 0.95rem; padding: 12px;" href="https://wa.me/201003618383?text=مرحباً%20أكاديمية%20Healthy%20Diet،%20أود%20الاستفسار%20وحجز%20مقعد%20في%20كورس%20الجودة%20وسلامة%20الغذاء%20" target="_blank" rel="noopener noreferrer">احجز مكانك الآن</a>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
 
 
         <section class="section" id="about">
@@ -451,7 +714,7 @@
                 <div class="cta-panel">
                     <h3>ابدأ الآن في بناء صحتك بشكل صحيح</h3>
                     <p>انضم إلى رحلتك التعليمية والغذائية اليوم، وابدأ في اتخاذ خطوات عملية نحو حياة أكثر توازنًا.</p>
-                    <a class="btn btn-primary" href="https://wa.me/201035391849" target="_blank" rel="noopener noreferrer">تواصل معنا عبر واتساب</a>
+                    <a class="btn btn-primary" href="https://wa.me/201003618383" target="_blank" rel="noopener noreferrer">تواصل معنا عبر واتساب</a>
                 </div>
             </div>
         </section>
@@ -504,6 +767,38 @@
 
         window.onload = loadExamLink;
     </script>
+
+    <footer class="site-footer">
+    <div class="container footer-content">
+        <p>© 2026 أكاديمية Healthy Diet. جميع الحقوق محفوظة.</p>
+        
+        <div class="social-links">
+            <a href="https://www.facebook.com/share/18SnPdYpoh/" target="_blank" rel="noopener noreferrer" class="social-icon fb" aria-label="Facebook">
+                <svg viewBox="0 0 24 24">
+                    <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.8z"/>
+                </svg>
+            </a>
+
+            <a href="https://www.instagram.com/healthydiet.1522004?igsh=dmZoNDBiYWM0Mmlw" target="_blank" rel="noopener noreferrer" class="social-icon ig" aria-label="Instagram">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204 0.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+                </svg>
+            </a>
+
+            <a href="https://whatsapp.com/channel/0029VbDFeQr23n3cM9vTa23P" target="_blank" rel="noopener noreferrer" class="social-icon wa" aria-label="WhatsApp Channel">
+                <svg viewBox="0 0 24 24">
+                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.316 1.592 5.548 0 10.061-4.512 10.063-10.066.002-2.69-1.046-5.216-2.951-7.121-1.905-1.904-4.432-2.951-7.123-2.952-5.552 0-10.066 4.513-10.068 10.068-.001 2.048.565 3.637 1.592 5.321l-.994 3.632 3.715-.974zm13.738-10.188c-.3-.15-1.774-.875-2.046-.974-.272-.1-.471-.15-.669.15-.198.3-.765.974-.938 1.173-.173.199-.347.225-.647.075-.3-.15-1.266-.467-2.41-1.486-.89-.794-1.49-1.775-1.665-2.075-.175-.3-.019-.461.13-.61.135-.133.3-.349.45-.523.15-.174.2-.299.3-.499.1-.2.05-.375-.025-.524-.075-.15-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.774-.726 2.022-1.429.247-.699.247-1.296.173-1.425-.074-.124-.272-.199-.572-.349z"/>
+                </svg>
+            </a>
+
+            <a href="https://t.me/+qMeiRY2AQ3QzYjNk" target="_blank" rel="noopener noreferrer" class="social-icon tg" aria-label="Telegram">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-1-.65-.35-1 .22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 0 0-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+</footer>
 
 </body>
 </html>
